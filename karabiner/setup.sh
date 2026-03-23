@@ -5,6 +5,12 @@ KARABINER_CONFIG_DIR="$HOME/.config/karabiner"
 
 echo "Setting up Karabiner-Elements configuration..."
 
+# install Karabiner-Elements
+if ! brew list --cask karabiner-elements &>/dev/null; then
+    echo "Installing Karabiner-Elements..."
+    brew install --cask karabiner-elements
+fi
+
 # Create karabiner config directory if it doesn't exist
 if [ ! -d "$KARABINER_CONFIG_DIR" ]; then
     echo "Creating Karabiner-Elements config directory..."
