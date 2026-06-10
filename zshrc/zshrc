@@ -43,3 +43,11 @@ export SCRCPY_SERVER_PATH=/Applications/极空间.app/Contents/Resources/app.asa
 export PATH=$PATH:/Applications/极空间.app/Contents/Resources/app.asar.unpacked/bin/platform-tools
 
 
+
+# bun completions
+[ -s "/Users/kait/.bun/_bun" ] && source "/Users/kait/.bun/_bun"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/kait/.lmstudio/bin"
+# End of LM Studio CLI section
+
