@@ -51,3 +51,7 @@ export PATH=$PATH:/Applications/极空间.app/Contents/Resources/app.asar.unpack
 export PATH="$PATH:/Users/kait/.lmstudio/bin"
 # End of LM Studio CLI section
 
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

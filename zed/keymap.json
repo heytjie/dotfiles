@@ -1,0 +1,107 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "bindings": {
+      "ctrl-g": "editor::Cancel",
+      "shift-left": "workspace::ActivatePaneLeft",
+      "shift-right": "workspace::ActivatePaneRight",
+      "shift-down": "workspace::ActivatePaneDown",
+      "shift-up": "workspace::ActivatePaneUp",
+      "escape shift-left": "workspace::SwapPaneLeft",
+      "escape shift-right": "workspace::SwapPaneRight",
+      "escape shift-up": "workspace::SwapPaneUp",
+      "escape shift-down": "workspace::SwapPaneDown",
+      "escape %": "pane::SplitRight",
+      "escape ! %": "pane::SplitLeft",
+      "escape \"": "pane::SplitDown",
+      "escape ! \"": "pane::SplitUp",
+    },
+  },
+  {
+    "context": "Editor && mode == full",
+    "bindings": {
+      "ctrl-g": "editor::Cancel",
+    },
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-g": "editor::Cancel",
+      "ctrl-alt-w": "editor::Cut",
+      "ctrl-w": ["workspace::SendKeystrokes", "ctrl-alt-w ctrl-g"],
+      "ctrl-y": "editor::Paste",
+      "ctrl-u": "editor::DeleteLine", // this does not clear the line as it should, but also removes the line break
+      "escape left": "editor::MoveToPreviousSubwordStart",
+      "escape right": "editor::MoveToNextSubwordEnd",
+      "escape backspace": "editor::DeleteToPreviousSubwordStart",
+      "escape delete": "editor::DeleteToNextSubwordEnd",
+      "escape /": "editor::ShowCompletions",
+      "escape g b": "git::Blame",
+      "escape g g": "go_to_line::Toggle", // goto-line
+      "escape m": [
+        "editor::MoveToBeginningOfLine",
+        { "stop_at_soft_wraps": false, "stop_at_indent": true },
+      ], // back-to-indentation
+      "escape f": "editor::MoveToNextSubwordEnd", // forward-word
+      "escape b": "editor::MoveToPreviousSubwordStart", // backward-word
+      "escape u": "editor::ConvertToUpperCase", // upcase-word
+      "escape l": "editor::ConvertToLowerCase", // downcase-word
+      "escape c": "editor::ConvertToUpperCamelCase", // capitalize-word
+      "escape ;": ["editor::ToggleComments", { "advance_downwards": false }],
+      "escape .": "editor::GoToDefinition", // xref-find-definitions
+      "escape ,": "pane::GoBack", // xref-pop-marker-stack
+      "escape d": "editor::DeleteToNextWordEnd", // kill-word
+      "escape w": ["workspace::SendKeystrokes", "alt-w ctrl-g"], // kill-ring-save
+      "escape {": "editor::MoveToStartOfParagraph", // backward-paragraph
+      "escape }": "editor::MoveToEndOfParagraph", // forward-paragraph
+      "escape v": "editor::MovePageUp", // scroll-down
+      "escape <": "editor::MoveToBeginning", // beginning-of-buffer
+      "escape >": "editor::MoveToEnd", // end-of-buffer
+      "escape ^": "editor::JoinLines", // join-line
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-g": "editor::Cancel",
+      "escape z k": "zed::OpenKeymap",
+      "escape z t": "theme_selector::Toggle",
+      "escape z s": "zed::OpenSettings",
+      "escape z l": "language_selector::Toggle",
+      "escape d b": "workspace::ToggleBottomDock",
+      "escape d l": "workspace::ToggleLeftDock",
+      "escape d r": "workspace::ToggleRightDock",
+      "escape p t": "terminal_panel::ToggleFocus",
+      "escape p p": "project_panel::ToggleFocus",
+      "escape p o": "outline_panel::ToggleFocus",
+      "escape p c": "collab_panel::ToggleFocus",
+    },
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "n": "project_panel::NewFile",
+      "d": "project_panel::NewDirectory",
+      "ctrl-w": "project_panel::Cut",
+      "escape w": "project_panel::Copy",
+      "ctrl-y": "project_panel::Paste",
+      "r": "project_panel::Rename",
+      "f2": "project_panel::Rename",
+      "backspace": ["project_panel::Trash", { "skip_prompt": false }],
+      "delete": ["project_panel::Trash", { "skip_prompt": false }],
+      "shift-delete": ["project_panel::Delete", { "skip_prompt": false }],
+      "ctrl-backspace": ["project_panel::Delete", { "skip_prompt": false }],
+      "ctrl-delete": ["project_panel::Delete", { "skip_prompt": false }],
+      "ctrl-s": "project_panel::NewSearchInDirectory",
+      "ctrl-g": "menu::Cancel",
+      "enter": "project_panel::Open",
+      "space": "project_panel::Open",
+    },
+  },
+]
