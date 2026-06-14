@@ -30,6 +30,14 @@
     },
   },
   {
+    "context": "Pane",
+    "bindings": {
+      "ctrl-x ctrl-k": "pane::CloseActiveItem",
+      "ctrl-shift-j": "pane::ActivatePreviousItem",
+      "ctrl-shift-k": "pane::ActivateNextItem",
+    },
+  },
+  {
     "context": "Editor",
     "bindings": {
       "ctrl-g": "editor::Cancel",
