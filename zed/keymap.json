@@ -43,6 +43,7 @@
       "ctrl-g": "editor::Cancel",
       "ctrl-alt-w": "editor::Cut",
       "ctrl-w": ["workspace::SendKeystrokes", "ctrl-alt-w ctrl-g"],
+      "alt-w": ["workspace::SendKeystrokes", "cmd-c ctrl-g"],
       "ctrl-y": "editor::Paste",
       "ctrl-u": "editor::DeleteLine", // this does not clear the line as it should, but also removes the line break
       "escape left": "editor::MoveToPreviousSubwordStart",
